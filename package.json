@@ -1,6 +1,6 @@
 {
   "name": "cstack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Debug your code, not the Runtime",
   "keywords": [
     "callstack",
@@ -22,9 +22,9 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
   "type": "module",
   "scripts": {
     "node": "node --experimental-specifier-resolution=node --no-warnings",
