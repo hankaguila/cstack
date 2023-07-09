@@ -1,5 +1,5 @@
-function checkGetFrames() {
-  console.log("--- checkGetFrames ---");
+function checkGetStack() {
+  console.log("--- checkGetStack ---");
 
   function foo() {
     console.log(cstack.getStack());
@@ -58,6 +58,6 @@ function checkGetTrace() {
   bar();
 }
 
-checkGetFrames();
+checkGetStack();
 checkGetParent();
 checkGetTrace();
