@@ -24,8 +24,7 @@ function getStack(stackFilter?: StackFilter): StackFrame[] {
       const callerMatches = callerRegEx.exec(errorStackLine);
       const [, srcPath, lineNum, colNum] = srcMatches;
       if (srcPath.includes("node:internal")) continue;
-      if (!callerMatches) continue;
-      const [, callerName] = callerMatches;
+      const callerName = callerMatches ? callerMatches[1] : "<anonymous>";
       const moduleName = parse(srcPath).name;
       stackFrames.push({
         srcPath,
