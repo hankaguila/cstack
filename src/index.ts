@@ -2,7 +2,7 @@ import { parse } from "path";
 import { StackFrame, StackFilter } from "../types";
 import findCommonPath from "./helpers/findCommonPath";
 
-// export { StackFrame, StackFilter };
+export { StackFrame, StackFilter };
 
 /**
  * Returns the current call stack.
