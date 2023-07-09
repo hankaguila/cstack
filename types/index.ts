@@ -1,7 +1,7 @@
 /**
- * Defines a predicate function that filters out items from  a call stack.
+ * Defines a predicate function to filter out items from a call stack.
  *
- * @typedef
+ * @typedef {(StackFrame, number, StackFrame[]) => boolean}
  */
 export type StackFilter = (
   value: StackFrame,
@@ -10,7 +10,7 @@ export type StackFilter = (
 ) => boolean
 
 /**
- * Defines an item from a call stack.
+ * Defines a call stack item (a.k.a. stack frame).
  *
  * @interface
  * @property {string} srcPath - The absolute path to the module containing the caller.

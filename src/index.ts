@@ -12,9 +12,9 @@ function getStack(stackFilter?: StackFilter): StackFrame[] {
   const errorStack = new Error().stack;
   const errorStackLines = errorStack ? errorStack.split("\n").slice(1) : [];
   const stackFrames: StackFrame[] = [];
-  const nodeInternalRegex =  /node:internal/;
+  const nodeInternalRegex = /node:internal/;
   const srcRegEx = /(\/\w.*)?:(\d+):(\d+)/;
-  const callerRegEx =/at (\S+) (\S+)/;
+  const callerRegEx = /at (\S+) (\S+)/;
 
   for (const errorStackLine of errorStackLines) {
     const nodeInternalMatches = nodeInternalRegex.exec(errorStackLine);
@@ -69,12 +69,12 @@ function getParent(callerName: string): StackFrame | undefined {
 }
 
 /**
- * Returns a stack trace.
+ * Returns the stack trace.
  *
- * Hint: Use `getTrace(true)` to see the calls in chronological order.
+ * Hint: Use `getTrace(true)` to see the trace in chronological order.
  *
- * @params {boolean} - A boolean for reversing the order of the stack.
- * @returns {string} - A reversed stack trace.
+ * @params {boolean} - A boolean for reversing the order of the stack trace.
+ * @returns {string} - The stack trace.
  */
 function getTrace(reversed = false): string {
   const frames = getStack();
@@ -89,7 +89,7 @@ function getTrace(reversed = false): string {
     result.push(`    ${childPath}[${lineNum}:${colNum}]`);
   });
 
-  return result.join("\n") + "\n";
+  return `${result.join("\n") }\n`;
 }
 
 const cstack = { getStack, getParent, getTrace };
