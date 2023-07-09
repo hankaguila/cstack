@@ -1,0 +1,19 @@
+# exclude
+*
+
+# include
+!chk
+!chk/**
+!src
+!src/**
+!test
+!test/**
+!types
+!types/**
+!.gitignore
+!.eslintrc.json
+!package.json
+!tsconfig.json
+!README.md
+!.npmrc
+!LICENSE

@@ -1,0 +1,63 @@
+function checkGetFrames() {
+  console.log("--- checkGetFrames ---");
+
+  function foo() {
+    console.log(cstack.getStack());
+  }
+
+  function bar() {
+    foo();
+  }
+
+  bar();
+
+  console.log();
+}
+
+function checkGetParent() {
+  console.log("--- checkGetParent ---");
+
+  function funcA() {
+    funcB();
+  }
+
+  function funcB() {
+    funcC();
+  }
+
+  function funcC() {
+    const callerOfFuncA = cstack.getParent("funcA");
+    const callerOfFuncB = cstack.getParent("funcB");
+    const callerOfFuncC = cstack.getParent("funcC");
+    const callerOfFuncFoo = cstack.getParent("foo");
+
+    console.log({
+      callerOfFuncA,
+      callerOfFuncB,
+      callerOfFuncC,
+      callerOfFuncFoo,
+    });
+  }
+
+  funcA();
+
+  console.log();
+}
+
+function checkGetTrace() {
+  console.log("--- checkGetTrace ---");
+
+  function foo() {
+    console.log(cstack.getTrace(true));
+  }
+
+  function bar() {
+    foo();
+  }
+
+  bar();
+}
+
+checkGetFrames();
+checkGetParent();
+checkGetTrace();
