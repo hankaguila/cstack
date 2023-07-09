@@ -94,4 +94,6 @@ export function getTrace(reversed = false): string {
   return result.join("\n") + "\n";
 }
 
-export default { getStack, getParent, getTrace };
+const cstack = { getStack, getParent, getTrace };
+
+export default cstack;
