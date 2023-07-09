@@ -2,15 +2,13 @@ import { parse } from "path";
 import { StackFrame, StackFilter } from "../types";
 import findCommonPath from "./helpers/findCommonPath";
 
-export { StackFrame, StackFilter };
-
 /**
  * Returns the current call stack.
  *
  * @param {StackFilter?} stackFilter - See {@link StackFilter}.
  * @returns {StackFrame[]} - An array containing the current call stack.
  */
-export function getStack(stackFilter?: StackFilter): StackFrame[] {
+function getStack(stackFilter?: StackFilter): StackFrame[] {
   const errorStack = new Error().stack;
   const errorStackLines = errorStack ? errorStack.split("\n").slice(1) : [];
   const stackFrames: StackFrame[] = [];
@@ -25,6 +23,7 @@ export function getStack(stackFilter?: StackFilter): StackFrame[] {
     if (!nodeInternalMatches && srcMatches) {
       const callerMatches = callerRegEx.exec(errorStackLine);
       const [, srcPath, lineNum, colNum] = srcMatches;
+      if (srcPath.includes("node:internal")) continue;
       if (!callerMatches) continue;
       const [, callerName] = callerMatches;
       const moduleName = parse(srcPath).name;
@@ -51,7 +50,7 @@ export function getStack(stackFilter?: StackFilter): StackFrame[] {
  * @param {string} callerName - See {@link StackFrame#callerName}.
  * @returns {StackFrame | undefined} See {@link StackFrame}.
  */
-export function getParent(callerName: string): StackFrame | undefined {
+function getParent(callerName: string): StackFrame | undefined {
   let acceptNext = false;
 
   const filterPredicate: StackFilter = (stackFrame) => {
@@ -78,7 +77,7 @@ export function getParent(callerName: string): StackFrame | undefined {
  * @params {boolean} - A boolean for reversing the order of the stack.
  * @returns {string} - A reversed stack trace.
  */
-export function getTrace(reversed = false): string {
+function getTrace(reversed = false): string {
   const frames = getStack();
 
   if (reversed) frames.reverse();
@@ -97,3 +96,5 @@ export function getTrace(reversed = false): string {
 const cstack = { getStack, getParent, getTrace };
 
 export default cstack;
+export { getStack, getParent, getTrace };
+export * from "../types";
