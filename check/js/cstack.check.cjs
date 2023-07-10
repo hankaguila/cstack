@@ -1,9 +1,9 @@
 const fs = require("fs");
-const cstack = require("../../src/index");
+const cstack = require("../../dist/index.cjs");
 
 console.debug(cstack, "\n");
 
-const codePath = "chk/code";
+const codePath = "check/cstack.check.code";
 
 const code = fs.readFileSync(codePath, "utf-8");
 

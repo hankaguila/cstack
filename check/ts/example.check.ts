@@ -1,4 +1,4 @@
-import cstack from "../src";
+import cstack from "../../src";
 
 function firstCall() {
   console.debug("1");

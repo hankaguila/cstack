@@ -3,7 +3,7 @@ import cstack from "../../dist/index.mjs";
 
 console.debug(cstack, "\n");
 
-const codePath = "chk/code";
+const codePath = "check/cstack.check.code";
 
 const code = fs.readFileSync(codePath, "utf-8");
 
