@@ -1,6 +1,6 @@
 import { parse } from "path";
 import { StackFrame, StackFilter } from "../type";
-import findCommonPath from "./helpers/findCommonPath";
+import findCommonPath from "./helper/findCommonPath";
 
 /**
  * Returns the current call stack.
