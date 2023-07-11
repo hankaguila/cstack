@@ -6,6 +6,9 @@ Debug your code, not the Runtime
 - CommonJS (Node.js) supported
 - ECMAScript Modules (ESM) supported
 
+[![npm-version](https://img.shields.io/npm/v/cstack.svg)](https://www.npmjs.com/package/cstack)
+[![npm-downloads](https://img.shields.io/npm/dm/cstack.svg)](https://npmcharts.com/compare/cstack?minimal=true)
+
 ## Table of Contents
 
 - [Why](#why)
