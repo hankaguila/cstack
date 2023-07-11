@@ -2,7 +2,9 @@
 
 Debug your code, not the Runtime
 
-> Tested on CommonJS and ESM
+- TypeScript supported
+- CommonJS (Node.js) supported
+- ECMAScript Modules (ESM) supported
 
 ## Table of Contents
 
