@@ -1,5 +1,5 @@
 import { beforeAll, afterAll, describe, it, vi, expect } from "vitest";
-import { StackFrame } from "../types";
+import { StackFrame } from "../type";
 import cstack from "../src";
 
 let stackFrames: StackFrame[];

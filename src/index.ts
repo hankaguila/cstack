@@ -1,5 +1,5 @@
 import { parse } from "path";
-import { StackFrame, StackFilter } from "../types";
+import { StackFrame, StackFilter } from "../type";
 import findCommonPath from "./helpers/findCommonPath";
 
 /**
@@ -96,4 +96,4 @@ const cstack = { getStack, getParent, getTrace };
 
 export default cstack;
 export { getStack, getParent, getTrace };
-export * from "../types";
+export * from "../type";
