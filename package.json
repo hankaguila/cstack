@@ -1,6 +1,6 @@
 {
   "name": "cstack",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Debug your code, not the Runtime",
   "keywords": [
     "callstack",
