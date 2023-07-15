@@ -1,5 +1,5 @@
 const fs = require("fs");
-const cstack = require("../../dist/index.cjs");
+const cstack = require("../../build/index.cjs");
 
 console.debug(cstack, "\n");
 

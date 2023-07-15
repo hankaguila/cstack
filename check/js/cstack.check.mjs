@@ -1,5 +1,5 @@
 import fs from "fs";
-import cstack from "../../dist/index.mjs";
+import cstack from "../../build/index.mjs";
 
 console.debug(cstack, "\n");
 
